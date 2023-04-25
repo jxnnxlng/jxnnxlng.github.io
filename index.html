@@ -1,7 +1,36 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+  <head>
+    <style>
+      :root {
+        --font-size: 20px;
+        --heading-size: 3em;
+        --marker-top: 25px;
+      }
+      body {
+        font-family: "Courier New", Courier, monospace;
+        font-size: var(--font-size);
+      }
+      h1 {
+        display: inline;
+        position: relative;
+        font-size: var(--heading-size);
+      }
+      h1::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: var(--marker-top);
+        left: 0;
+        right: 0;
+        height: 0.5em;
+        background-color: yellow;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Das Test</h1>
+    <p>Das ist ein Test hier für mich.</p>
+  </body>
 </html>
