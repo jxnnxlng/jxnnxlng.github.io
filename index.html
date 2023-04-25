@@ -18,6 +18,27 @@
         display: block;
         position: absolute;
         top: 25px;
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Jannes Blog</title>
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 20px;
+      }
+      h1 {
+        display: inline;
+        position: relative;
+        font-size: 3em;
+        padding-bottom: 300px;
+      }
+      h1::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 25px;
         left: 0;
         right: 0;
         height: 0.5em;
@@ -35,22 +56,22 @@
         position:absolute;
         top: calc(25px / 2 + 5px);
         left:0;
-right:0;
-height:.5em;
-background-color:yellow;
-z-index:-1;
-}
-a {
-text-decoration:none;
-color:black;
-}
-article p {
-margin-top:0;
-}
-article {
-margin-bottom:50px;
-}
-</style>
+        right:0;
+        height:.5em;
+        background-color:yellow;
+        z-index:-1;
+      }
+      a {
+        text-decoration:none;
+        color:black;
+      }
+      article p {
+        margin-top:0;
+      }
+      article {
+        margin-bottom:50px;
+      }
+    </style>
   </head>
   <body>
     <h1>Jannes Blog</h1>
@@ -61,7 +82,7 @@ margin-bottom:50px;
     </article>
     <article>
       <h2><a href="post2.html">Ein weiterer interessanter Beitrag</a></h2>
-      <p>In diesem Beitrag teile ich einige interessante Fakten und Gedanken
+      <p>In diesem Beitrag teile ich einige interessante Fakten und Gedanken.</p>
     </article>
   </body>
 </html>
