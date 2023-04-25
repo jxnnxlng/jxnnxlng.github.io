@@ -1,41 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="shortcut icon" href="/favicon/favicon.ico">
-    <style>
-      :root {
-        --font-size: 20px;
-        --heading-size: 3em;
-        --marker-top: 25px;
+  <head>
+    <title>Jannes Blog</title>
+    <style>
+      body { /* Stilregeln für das body-Element */
+        font-family: "Courier New", Courier, monospace; /* Schriftart für den Text */
+        font-size: 20px; /* Schriftgröße für den Text */
+      }
+      h1 { /* Stilregeln für h1-Elemente */
+        display: inline; /* Anzeige als Inline-Element */
+        position: relative; /* Positionierung relativ zum umgebenden Element */
+        font-size: 3em; /* Schriftgröße als 3-fache der Schriftgröße des Elternelements */
+        padding-bottom: 300px; /* Abstand von 300px unterhalb des Elements */
+      }
+      h1::after { /* Stilregeln für das ::after-Pseudoelement von h1-Elementen */
+        content: ""; /* Inhalt des Pseudoelements */
+        display: block; /* Anzeige als Block-Element */
+        position: absolute; /* Absolute Positionierung innerhalb des umgebenden Elements */
+        top: 25px; /* Abstand von 25px vom oberen Rand des umgebenden Elements */
+        left: 0; /* Abstand von 0px vom linken Rand des umgebenden Elements */
+        right: 0; /* Abstand von 0px vom rechten Rand des umgebenden Elements */
+        height: 0.5em; /* Höhe des Pseudoelements als 0.5-fache der Schriftgröße des Elternelements */
+        background-color: yellow; /* Hintergrundfarbe des Pseudoelements */
+        z-index: -1; /* Stapelreihenfolge des Pseudoelements hinter dem Elternelement */
       }
-      body {
-        font-family: "Courier New", Courier, monospace;
-        font-size: var(--font-size);
+      h2 { /* Stilregeln für h2-Elemente */
+        font-size: 2em; /* Schriftgröße als 2-fache der Schriftgröße des Elternelements */
+        display:inline; /* Anzeige als Inline-Element */
+        position:relative; /* Positionierung relativ zum umgebenden Element */
       }
-      h1 {
-        display: inline;
-        position: relative;
-        font-size: var(--heading-size);
+      h2::after { /* Stilregeln für das ::after-Pseudoelement von h2-Elementen */
+        content:""; /* Inhalt des Pseudoelements */
+        display:block; /* Anzeige als Block-Element */
+        position:absolute; /* Absolute Positionierung innerhalb des umgebenden Elements */
+        top: calc(25px / 2 + 5px); /* Abstand vom oberen Rand des umgebenden Elements berechnet durch die Formel (25px / 2 + 5px) */
+        left:0; /* Abstand von 0px vom linken Rand des umgebenden Elements */
+        right:0; /* Abstand von 0px vom rechten Rand des umgebenden Elements */
+        height:.5em; /* Höhe des Pseudoelements als 0.5-fache der Schriftgröße des Elternelements */
+        background-color:yellow; /* Hintergrundfarbe des Pseudoelements */
+        z-index:-1; /* Stapelreihenfolge des Pseudoelements hinter dem Elternelement */
       }
-      h1::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: var(--marker-top);
-        left: 0;
-        right: 0;
-        height: 0.5em;
-        background-color: yellow;
-        z-index: -1;
+      a { /* Stilregeln für a-Elemente (Hyperlinks) */
+        text-decoration:none; /* Keine Textdekoration (z.B. Unterstreichung) für Hyperlinks */
+        color:black; /* Textfarbe für Hyperlinks */
+      }
+      article p { /* Stilregeln für p-Elemente innerhalb von article-Elementen*/
+        margin-top:0; /* Kein Abstand oberhalb von p-Elementen innerhalb von article-Elementen*/
+      }
+      article { /* Stilregeln für article-Elemente*/
+        margin-bottom:50px; /* Abstand von 50px unterhalb von article-Elementen*/
       }
     </style>
   </head>
   <body>
-    <h1>Das Test</h1>
-    <p>Das ist ein Test hier für mich.</p>
+    <h1>Jannes Blog</h1>
+    <br><br><br>
+    <article>
+      <h2><a href="post1.html">Mein erster Blogbeitrag</a></h2>
+      <p>Dies ist mein erster Blogbeitrag. Hier schreibe ich über meine Erfahrungen und Gedanken.</p>
+    </article>
+    <article>
+      <h2><a href="post2.html">Ein weiterer interessanter Beitrag</a></h2>
+      <p>In diesem Beitrag teile ich einige interessante Fakten und Gedanken
+    </article>
   </body>
 </html>
