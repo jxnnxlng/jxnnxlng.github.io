@@ -2,7 +2,6 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jannes Blog</title>
     <style>
       body {
@@ -14,33 +13,19 @@
         position: relative;
         font-size: 3em;
         padding-bottom: 300px;
-      }
-      h1::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 25px;
-        left: 0;
-        right: 0;
-        height: 0.5em;
-        background-color: yellow;
-        z-index: -1;
+        background-image: linear-gradient(to bottom, yellow, yellow);
+        background-size: 100% 0.5em;
+        background-repeat: no-repeat;
+        background-position: 0 25px;
       }
       h2 {
         font-size: 2em;
         display:inline;
         position:relative;
-      }
-      h2::after {
-        content:"";
-        display:block;
-        position:absolute;
-        top: calc(25px / 2 + 5px);
-        left:0;
-        right:0;
-        height:.5em;
-        background-color:yellow;
-        z-index:-1;
+        background-image: linear-gradient(to bottom, yellow, yellow);
+        background-size: 100% 0.5em;
+        background-repeat: no-repeat;
+        background-position: 0 25px;
       }
       a {
         text-decoration:none;
