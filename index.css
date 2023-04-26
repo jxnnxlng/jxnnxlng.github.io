@@ -11,6 +11,7 @@ h1 {
   background-size: 100% 0.5em;
   background-repeat: no-repeat;
   background-position: 0 25px;
+  line-height: 0.8;
 }
 h2 {
   font-size: 2em;
@@ -20,6 +21,7 @@ h2 {
   background-size: 100% 0.5em;
   background-repeat: no-repeat;
   background-position: 0 18px;
+  line-height: 0.8;
 }
 a {
   text-decoration:none;
