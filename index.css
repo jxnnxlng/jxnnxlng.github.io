@@ -9,7 +9,6 @@ body {
         padding-bottom: 300px;
         background-color: yellow;
         background-size: 100% 0.5em;
-        background-repeat: no-repeat;
         background-position: 0 25px;
       }
       h2 {
@@ -18,15 +17,11 @@ body {
         position:relative;
         background-color: yellow;
         background-size: 100% 0.5em;
-        background-repeat: no-repeat;
         background-position: 0 18px;
       }
       a {
         text-decoration:none;
         color:black;
-      }
-      article p {
-        margin-top:0;
       }
       article {
         margin-bottom:50px;
