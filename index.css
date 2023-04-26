@@ -9,7 +9,9 @@ body {
 }
 h1 {
   display: inline;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   font-size: 3em;
   padding-bottom: 300px;
   background-image: linear-gradient(to bottom, yellow, yellow);
@@ -25,7 +27,6 @@ h2 {
   background-size: 100% 0.5em;
   background-repeat: no-repeat;
   background-position: 0 18px;
-  margin-bottom: 0;
 }
 a {
   text-decoration:none;
