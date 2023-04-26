@@ -7,7 +7,7 @@ body {
         position: relative;
         font-size: 3em;
         padding-bottom: 300px;
-        background-image: linear-gradient(to bottom, yellow, yellow);
+        background-color: yellow;
         background-size: 100% 0.5em;
         background-repeat: no-repeat;
         background-position: 0 25px;
@@ -16,7 +16,7 @@ body {
         font-size: 2em;
         display:inline;
         position:relative;
-        background-image: linear-gradient(to bottom, yellow, yellow);
+        background-color: yellow;
         background-size: 100% 0.5em;
         background-repeat: no-repeat;
         background-position: 0 18px;
