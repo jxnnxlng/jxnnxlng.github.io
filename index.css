@@ -12,6 +12,7 @@ body {
   top: 0;
   width: 100%;
   background-color: white;
+  height: 70px;
 }
 .content {
   margin-top: 70px;
