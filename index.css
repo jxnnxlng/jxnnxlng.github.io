@@ -11,7 +11,7 @@ body {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: blue;
+  background-color: white;
   height: 100px;
   z-index: 10;
 }
