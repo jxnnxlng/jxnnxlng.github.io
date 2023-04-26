@@ -10,14 +10,11 @@ body {
 .header {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   background-color: white;
-  z-index: 1;
 }
 .content {
   margin-top: 50px;
-  z-index: -1;
 }
 h1 {
   display: inline;
