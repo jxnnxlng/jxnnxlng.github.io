@@ -1,6 +1,7 @@
 body {
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
+  margin: 20px;
 }
 h1 {
   display: inline;
