@@ -2,6 +2,11 @@ body {
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
 }
+@media (min-width: 768px) {
+  body {
+    margin: 0 20px 20px 20px;
+  }
+}
 h1 {
   display: inline;
   position: relative;
