@@ -3,7 +3,7 @@ body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #1a1a1a;
+  background-color: #111; /* Sehr dunkles Schwarz */
   color: #fff;
 }
 
@@ -13,7 +13,7 @@ h1, h2 {
 
 a {
   text-decoration: none;
-  color: #f1c40f;
+  color: #e74c3c; /* Dunkles Rot */
 }
 
 section {
@@ -22,8 +22,8 @@ section {
 }
 
 .cta-button {
-  background-color: #f1c40f;
-  color: #333;
+  background-color: #e74c3c; /* Dunkles Rot */
+  color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   text-transform: uppercase;
@@ -38,7 +38,7 @@ section {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #333;
+  background-color: #222; /* Dunkles Grau */
   padding: 20px;
   z-index: 1000;
 }
@@ -54,7 +54,7 @@ section {
 }
 
 #header nav ul li a {
-  color: #f1c40f;
+  color: #e74c3c; /* Dunkles Rot */
   font-size: 18px;
   text-transform: uppercase;
 }
@@ -70,6 +70,7 @@ section {
   align-items: center;
   color: #fff;
   text-align: center;
+  filter: brightness(50%); /* Verdunkelung des Hintergrunds */
 }
 
 .hero-content h1 {
@@ -78,13 +79,13 @@ section {
 }
 
 .hero-content .cta-button {
-  background-color: #f1c40f;
-  color: #333;
+  background-color: #e74c3c; /* Dunkles Rot */
+  color: #fff;
 }
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #222; /* Dunkles Grau */
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -95,7 +96,7 @@ footer p {
 }
 
 footer a {
-  color: #f1c40f;
+  color: #e74c3c; /* Dunkles Rot */
   margin: 0 10px;
 }
 
@@ -104,7 +105,7 @@ form {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #333;
+  background-color: #333; /* Sehr dunkles Grau */
   border-radius: 5px;
 }
 
@@ -112,15 +113,15 @@ form input, form textarea {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
-  border: 1px solid #f1c40f;
+  border: 1px solid #e74c3c; /* Dunkles Rot */
   border-radius: 5px;
-  background-color: #222;
+  background-color: #222; /* Sehr dunkles Grau */
   color: #fff;
 }
 
 form button {
-  background-color: #f1c40f;
-  color: #333;
+  background-color: #e74c3c; /* Dunkles Rot */
+  color: #fff;
   padding: 10px 20px;
   border-radius: 5px;
   text-transform: uppercase;
