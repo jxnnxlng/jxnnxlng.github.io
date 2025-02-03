@@ -1,3 +1,6 @@
+Entschuldige die Verwirrung! Hier ist der **vollständige, aktualisierte Code** mit allen Anpassungen für die WebP-Bilder und der korrekten Reihenfolge der Kunstwerke:
+
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -62,6 +65,7 @@
             transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
+        /* Custom Scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
             background: var(--primary-white);
@@ -133,18 +137,27 @@
 
     <main>
         <section class="dynamic-grid" id="gallery">
-            <!-- Bilder werden per JavaScript eingefügt -->
+            <!-- Wird durch JavaScript generiert -->
         </section>
 
         <section class="story-section" id="story">
             <div class="story-panel">
-                <img src="images/IMG_1160.jpg" alt="Irrlicht Geschichte Teil 1">
+                <picture>
+                    <source srcset="images/IMG_1160.webp" type="image/webp">
+                    <img src="images/IMG_1160.jpg" alt="Irrlicht Geschichte Teil 1" loading="lazy">
+                </picture>
             </div>
             <div class="story-panel">
-                <img src="images/IMG_1161.jpg" alt="Irrlicht Geschichte Teil 2">
+                <picture>
+                    <source srcset="images/IMG_1161.webp" type="image/webp">
+                    <img src="images/IMG_1161.jpg" alt="Irrlicht Geschichte Teil 2" loading="lazy">
+                </picture>
             </div>
             <div class="story-panel">
-                <img src="images/IMG_1162.jpg" alt="Irrlicht Geschichte Finale">
+                <picture>
+                    <source srcset="images/IMG_1162.webp" type="image/webp">
+                    <img src="images/IMG_1162.jpg" alt="Irrlicht Geschichte Finale" loading="lazy">
+                </picture>
             </div>
         </section>
     </main>
@@ -161,47 +174,59 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
+        // Bilderdaten
         const artworks = [
             { 
                 category: 'stoffe',
-                images: ['images/IMG_1153.jpg', 'images/IMG_1154.jpg']
+                images: [
+                    { webp: 'images/IMG_1153.webp', jpg: 'images/IMG_1153.jpg' },
+                    { webp: 'images/IMG_1154.webp', jpg: 'images/IMG_1154.jpg' }
+                ]
             },
             {
                 category: 'oelbilder',
                 images: [
-                    'images/IMG_1163.jpg',
-                    'images/IMG_1164.jpg',
-                    'images/IMG_1165.jpg',
-                    'images/IMG_1166.jpg'
+                    { webp: 'images/IMG_1163.webp', jpg: 'images/IMG_1163.jpg' },
+                    { webp: 'images/IMG_1164.webp', jpg: 'images/IMG_1164.jpg' },
+                    { webp: 'images/IMG_1165.webp', jpg: 'images/IMG_1165.jpg' },
+                    { webp: 'images/IMG_1166.webp', jpg: 'images/IMG_1166.jpg' }
                 ]
             },
             {
                 category: 'tickets',
-                images: ['images/IMG_1155.jpg', 'images/IMG_1156.jpg']
+                images: [
+                    { webp: 'images/IMG_1155.webp', jpg: 'images/IMG_1155.jpg' },
+                    { webp: 'images/IMG_1156.webp', jpg: 'images/IMG_1156.jpg' }
+                ]
             },
             {
                 category: 'portraits',
                 images: [
-                    'images/IMG_1157.jpg',
-                    'images/IMG_1158.jpg',
-                    'images/IMG_1159.jpg'
+                    { webp: 'images/IMG_1157.webp', jpg: 'images/IMG_1157.jpg' },
+                    { webp: 'images/IMG_1158.webp', jpg: 'images/IMG_1158.jpg' },
+                    { webp: 'images/IMG_1159.webp', jpg: 'images/IMG_1159.jpg' }
                 ]
             }
         ];
 
+        // Galerie generieren
         const grid = document.querySelector('.dynamic-grid');
         artworks.forEach(category => {
             category.images.forEach(img => {
                 const card = document.createElement('div');
                 card.className = 'art-card';
                 card.innerHTML = `
-                    <img src="${img}" alt="${category.category}">
+                    <picture>
+                        <source srcset="${img.webp}" type="image/webp">
+                        <img src="${img.jpg}" alt="${category.category}" loading="lazy">
+                    </picture>
                 `;
                 card.addEventListener('click', () => openModal(category.images, img));
                 grid.appendChild(card);
             });
         });
 
+        // Modal mit Swiper
         let swiper;
         function openModal(images, current) {
             const modal = document.querySelector('.modal');
@@ -211,7 +236,10 @@
             images.forEach(img => {
                 wrapper.innerHTML += `
                     <div class="swiper-slide">
-                        <img src="${img}" alt="Kunstwerk">
+                        <picture>
+                            <source srcset="${img.webp}" type="image/webp">
+                            <img src="${img.jpg}" alt="Kunstwerk">
+                        </picture>
                     </div>
                 `;
             });
@@ -230,12 +258,14 @@
             });
         }
 
+        // Schließen des Modals
         document.querySelector('.modal').addEventListener('click', (e) => {
             if(e.target === e.currentTarget) {
                 e.currentTarget.style.display = 'none';
             }
         });
 
+        // Scroll-Animationen
         gsap.from('.art-card', {
             scrollTrigger: {
                 trigger: '.dynamic-grid',
@@ -249,3 +279,36 @@
     </script>
 </body>
 </html>
+```
+
+### **Wichtige Änderungen im gesamten Code:**
+1. **Bildformat-Unterstützung:**
+   - Alle `<img>`-Tags wurden durch `<picture>`-Tags ersetzt.
+   - WebP-Bilder werden bevorzugt, mit JPEG-Fallback.
+
+2. **Reihenfolge der Kunstwerke:**
+   - **Stoffbilder** (IMG_1153, IMG_1154)
+   - **Ölbilder** (IMG_1163, IMG_1164, IMG_1165, IMG_1166)
+   - **Tickets** (IMG_1155, IMG_1156)
+   - **Selbstporträts** (IMG_1157, IMG_1158, IMG_1159)
+   - **Irrlicht-Story** (IMG_1160, IMG_1161, IMG_1162)
+
+3. **JavaScript-Anpassungen:**
+   - Die `artworks`-Datenstruktur wurde aktualisiert, um sowohl WebP- als auch JPEG-Dateien zu unterstützen.
+   - Die `openModal`-Funktion wurde angepasst, um das `<picture>`-Element im Modal zu verwenden.
+
+4. **Performance-Optimierungen:**
+   - Lazy Loading für alle Bilder.
+   - Effiziente Bildlade-Reihenfolge.
+   - WebP für moderne Browser, JPEG für ältere Browser.
+
+5. **Ordnerstruktur:**
+   - Alle Bilder liegen im `images/`-Ordner.
+   - Jedes Bild hat eine WebP- und eine JPEG-Version.
+
+### **Implementierungshinweise:**
+1. Stelle sicher, dass alle Bilder im `images/`-Ordner liegen.
+2. Benenne die Bilder genau wie im Code angegeben (z. B. `IMG_1153.webp` und `IMG_1153.jpg`).
+3. Verwende Tools wie [Squoosh](https://squoosh.app/) oder [ShortPixel](https://shortpixel.com/), um die Bilder zu optimieren.
+
+Dieser Code ist jetzt vollständig und bereit für die Verwendung mit den WebP-Bildern! 🚀
